@@ -41,3 +41,6 @@ buildNumber.properties
 # Google App Engine generated folder
 appengine-generated/
 
+.DS_Store
+src/.DS_Store
+src/main/.DS_Store
