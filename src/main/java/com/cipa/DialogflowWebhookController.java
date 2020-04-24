@@ -1,4 +1,4 @@
-package com.example.appengine.springboot;
+package com.cipa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutionException;
 public class DialogflowWebhookController {
 
     @Autowired
-    private com.example.appengine.springboot.MyDialogFlowApp schoolAssistantApp;
+    private MyDialogFlowApp schoolAssistantApp;
 
     @RequestMapping(value = "/", method = RequestMethod.POST, produces = { "application/json" })
     String serveAction(@RequestBody String body, @RequestHeader Map<String, String> headers) {

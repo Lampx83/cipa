@@ -1,4 +1,4 @@
-package com.example.appengine.springboot;
+package com.cipa;
 
 import com.google.actions.api.ActionRequest;
 import com.google.actions.api.ActionResponse;
