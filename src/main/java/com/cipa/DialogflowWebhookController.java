@@ -10,12 +10,12 @@ import java.util.concurrent.ExecutionException;
 public class DialogflowWebhookController {
 
     @Autowired
-    private MyDialogFlowApp schoolAssistantApp;
+    private MyDialogFlowApp myDialogFlowApp;
 
     @RequestMapping(value = "/", method = RequestMethod.POST, produces = { "application/json" })
     String serveAction(@RequestBody String body, @RequestHeader Map<String, String> headers) {
         try {
-            return schoolAssistantApp.handleRequest(body, headers).get();
+            return myDialogFlowApp.handleRequest(body, headers).get();
         } catch (InterruptedException | ExecutionException e) {
             return handleError(e);
         }
@@ -23,9 +23,7 @@ public class DialogflowWebhookController {
 
     private String handleError(Exception e) {
         e.printStackTrace();
-        //log.error("Error in App.handleRequest ", e);
         return "Error handling the intent - " + e.getMessage();
     }
-
 
 }
