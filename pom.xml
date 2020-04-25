@@ -101,7 +101,6 @@
         <version>2.2.0</version>
         <configuration>
           <projectId>GCLOUD_CONFIG</projectId>
-          <version>test</version>
         </configuration>
       </plugin>
     </plugins>

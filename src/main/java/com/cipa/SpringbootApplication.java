@@ -2,6 +2,7 @@ package com.cipa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,12 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class SpringbootApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringbootApplication.class, args);
+    ApplicationContext context = SpringApplication.run(SpringbootApplication.class, args);
+  //  DialogFlowApp dialogFlowApp = context.getBean(DialogFlowApp.class);
+
   }
 
   @GetMapping("/")
   public String hello() {
-    return "Lampx";
+    return "Hello, I am CIPA";
   }
 
 }

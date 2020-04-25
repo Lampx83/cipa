@@ -1,5 +1,6 @@
-package com.cipa;
+package com.cipa.controller;
 
+import com.cipa.DialogFlowApp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,15 +8,15 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-public class DialogflowWebhookController {
+public class WebhookController {
 
     @Autowired
-    private MyDialogFlowApp myDialogFlowApp;
+    private DialogFlowApp dialogFlowApp;
 
     @RequestMapping(value = "/", method = RequestMethod.POST, produces = { "application/json" })
     String serveAction(@RequestBody String body, @RequestHeader Map<String, String> headers) {
         try {
-            return myDialogFlowApp.handleRequest(body, headers).get();
+            return dialogFlowApp.handleRequest(body, headers).get();
         } catch (InterruptedException | ExecutionException e) {
             return handleError(e);
         }
