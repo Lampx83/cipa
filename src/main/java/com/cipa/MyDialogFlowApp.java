@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class MyDialogFlowApp extends DialogflowApp {
 
     @ForIntent("phonenumber_lookup")
-    public ActionResponse student(ActionRequest request) {
+    public ActionResponse phonenumber_lookup(ActionRequest request) {
         ResponseBuilder responseBuilder = getResponseBuilder(request).add("0937638683");
         ActionResponse actionResponse = responseBuilder.build();
         return actionResponse;
